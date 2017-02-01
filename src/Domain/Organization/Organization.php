@@ -5,6 +5,7 @@ namespace Contacts\Domain\Organization;
 use Contacts\Domain\Value\Address;
 use Contacts\Domain\Value\Email;
 use Contacts\Domain\Value\PhoneNumber;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class Organization
 {

@@ -2,7 +2,10 @@
 
 namespace Contacts\Infrastructure\Web\Controller;
 
+use Contacts\Domain\Organization\Organization;
 use Contacts\Domain\Organization\OrganizationId;
+use Contacts\Infrastructure\Framework\UuidId;
+use Contacts\Infrastructure\Web\Form\OrganizationType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,10 +32,22 @@ class OrganizationController extends Controller
      */
     public function createAction(Request $request)
     {
-        // TODO create form and pass to view
+        $form = $this->createForm(OrganizationType::class);
 
-        return $this->render('organization/create.html.twig', [
-        ]);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $this->get('organization_repository')
+                ->add($form->getData());
+
+            return $this->redirectToRoute('organization_list');
+        }
+
+        return $this->render('organization/create.html.twig',
+            [
+                'form' => $form->createView(),
+            ]
+        );
     }
 
     /**
@@ -54,11 +69,25 @@ class OrganizationController extends Controller
     {
         $organization = $this->get('organization_repository')->get(OrganizationId::fromString($id));
 
-        // TODO create form and pass to view
+        $form = $this->createForm(OrganizationType::class, $organization);
 
-        return $this->render('organization/edit.html.twig', [
-            'organization' => $organization,
-        ]);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+
+            $this->get('organization_repository')
+                ->flush();
+
+            return $this->redirectToRoute('organization_list');
+
+        }
+
+        return $this->render('organization/edit.html.twig',
+            [
+                'organization' => $organization,
+                'form' => $form->createView(),
+            ]
+        );
     }
 
     /**

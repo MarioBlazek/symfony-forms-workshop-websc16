@@ -10,15 +10,15 @@ and modify organizations in the UI.
 Tasks
 -----
 
-* Create the `Contacts\Infrastructure\Web\Form\OrganizationType` class
-* Set the `data_class` option of the type to `Organization::class`
+* Create the `Contacts\Infrastructure\Web\Form\OrganizationType` class -> done
+* Set the `data_class` option of the type to `Organization::class` -> done
 * Only show the `name` field and the submit button `submit`. We'll follow up 
-  with `email`, `phoneNumber` and `address` in later assignments
+  with `email`, `phoneNumber` and `address` in later assignments -> done
 * Complete `createAction()` and `editAction()` in the `OrganizationController`.
-  After a successful submission, redirect to the organization list
+  After a successful submission, redirect to the organization list -> done
 * Complete the `organization/create.html.twig` and `organization/edit.html.twig`
-  templates
-* Validate that the name is not empty. If you want, set a custom error message
+  templates -> done
+* Validate that the name is not empty. If you want, set a custom error message -> done
 
 Hints
 -----
