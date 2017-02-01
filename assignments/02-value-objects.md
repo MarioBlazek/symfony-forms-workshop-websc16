@@ -11,15 +11,15 @@ value objects.
 Tasks
 -----
 
-* Create the `Contacts\Infrastructure\Web\Form\PhoneNumberType` class
+* Create the `Contacts\Infrastructure\Web\Form\PhoneNumberType` class -> done
 * Let `PhoneNumberType` inherit `TextType` by returning `TextType::class` from
-  its `getParent()` method
+  its `getParent()` method -> done
 * Let the type implement `DataTransformerInterface` to convert `PhoneNumber` 
-  to a string and back and use it as model transformer
-* Throw a `TransformationFailedException` if you're unable to transform a value
+  to a string and back and use it as model transformer -> done
+* Throw a `TransformationFailedException` if you're unable to transform a value -> done
 * Add the field `phoneNumber` of type `PhoneNumberType::class` to the
-  `OrganizationType` of the last assignment
-* The field is optional. Make sure it can be submitted without a value
+  `OrganizationType` of the last assignment -> done
+* The field is optional. Make sure it can be submitted without a value -> done
   
 Example
 -------
@@ -52,11 +52,11 @@ class PhoneNumberType extends AbstractType implements DataTransformerInterface
 Bonus Task (optional)
 ---------------------
 
-* Repeat these steps for the `email` field and create a new `EmailType`
+* Repeat these steps for the `email` field and create a new `EmailType` -> done
 * Let this type extend Symfony's own `EmailType` to automatically render it
-  as HTML5 email field
+  as HTML5 email field -> done
 * Validate that the value is an email address. To do so, set the `constraints` 
-  option in `EmailType::configureOptions()`
+  option in `EmailType::configureOptions()` -> done
   
 Hints
 -----

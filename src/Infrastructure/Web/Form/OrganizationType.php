@@ -30,6 +30,14 @@ class OrganizationType extends AbstractType
             ],
         ]);
 
+        $builder->add('phoneNumber', PhoneNumberType::class, [
+            'required' => false,
+        ]);
+
+        $builder->add('email', EmailType::class, [
+            'required' => false,
+        ]);
+
         $builder->add('submit', SubmitType::class);
     }
 
