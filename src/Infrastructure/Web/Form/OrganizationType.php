@@ -38,6 +38,8 @@ class OrganizationType extends AbstractType
             'required' => false,
         ]);
 
+        $builder->add('address', AddressType::class);
+
         $builder->add('submit', SubmitType::class);
     }
 

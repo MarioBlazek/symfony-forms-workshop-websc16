@@ -11,16 +11,16 @@ single value. In this assignment, we'll add a form type for the value object
 Tasks
 -----
 
-* Create the type `Contacts\Infrastructure\Web\Form\AddressType`
+* Create the type `Contacts\Infrastructure\Web\Form\AddressType` -> done
 * Add the fields `name`, `postalCode`, `city` and `countryCode` and choose
-  appropriate types. None of the fields is required
+  appropriate types. None of the fields is required -> done
 * Let `AddressType` implement `DataMapperInterface` to map the `Address` to
-  the fields and back
-* Add a field `address` of type `AddressType` to the `OrganizationType`
+  the fields and back -> done
+* Add a field `address` of type `AddressType` to the `OrganizationType` -> done
 * Make sure the type works with empty addresses (i.e. if the address of the 
-  organization is `null`)
+  organization is `null`) -> done
 * Make sure the type returns `null` if all fields are empty. Use
-  `$forms['street']->isEmpty()` to figure out if a field is empty
+  `$forms['street']->isEmpty()` to figure out if a field is empty -> done
   
 Example
 -------
