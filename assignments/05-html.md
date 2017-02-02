@@ -16,18 +16,18 @@ Tasks
 
 * Use `form_start(form)` and `form_end(form)` to render the opening and closing
   HTML tags of the form along with extra markup (for CSRF protection and
-  emulation of PUT requests)
-* Use `form_row(form.field)` to render each field
+  emulation of PUT requests) -> done
+* Use `form_row(form.field)` to render each field -> done
 * Skip the nesting level of the `address` field by directly rendering
-  `form_row(form.address.street)` etc.
-* Change the label of the "Country code" field to "Country"
-* Change the label of the "Submit" field to "Propose"
+  `form_row(form.address.street)` etc. -> done
+* Change the label of the "Country code" field to "Country" -> done
+* Change the label of the "Submit" field to "Propose" -> done
 * Wrap a fieldset with the legend "Contact Information" around the fields
-  `email`, `phoneNumber`, `street`, `postalCode`, `city` and `countryCode`
+  `email`, `phoneNumber`, `street`, `postalCode`, `city` and `countryCode` -> done
 * Wrap a fieldset with the legend "Additional Information" around the field 
-  "Notes"
+  "Notes" -> done
 * Pass the class `bootstrap-datepicker` to the `dateOfBirth` field to activate
-  the datepicker
+  the datepicker -> done
 
 Hints
 -----

@@ -12,7 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class ProposeContactType extends AbstractType implements DataMapperInterface
@@ -31,6 +30,11 @@ class ProposeContactType extends AbstractType implements DataMapperInterface
 
         $builder->add('dateOfBirth', BirthdayType::class, [
             'required' => false,
+            'widget' => 'single_text',
+            'format' => 'd/M/y',
+            'attr' => [
+                'class' => 'bootstrap-datepicker',
+            ],
         ]);
 
         $builder->add('email', EmailType::class, [
@@ -49,7 +53,9 @@ class ProposeContactType extends AbstractType implements DataMapperInterface
             'required' => false,
         ]);
 
-        $builder->add('submit', SubmitType::class);
+        $builder->add('submit', SubmitType::class, [
+            'label' => 'Propose',
+        ]);
 
         $builder->setDataMapper($this);
     }

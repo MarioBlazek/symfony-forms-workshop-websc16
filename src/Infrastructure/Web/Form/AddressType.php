@@ -5,9 +5,7 @@ namespace Contacts\Infrastructure\Web\Form;
 use Contacts\Domain\Value\Address;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\DataMapperInterface;
-use Symfony\Component\Form\Exception;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
@@ -30,6 +28,7 @@ class AddressType extends AbstractType implements DataMapperInterface
 
         $builder->add('countryCode', CountryType::class, [
             'required' => false,
+            'label' => 'Country',
         ]);
 
         $builder->setDataMapper($this);
