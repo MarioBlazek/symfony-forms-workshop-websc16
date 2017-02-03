@@ -11,11 +11,11 @@ Tasks
 -----
 
 * Create a new `Contacts\Infrastructure\Web\Form\GenericContactType` that will
-  house the common code
+  house the common code -> done
 * Let `ProposeContactType` and `ModifyContactType` inherit that type
-  (use `getParent()`)
+  (use `getParent()`) -> done
 * Move as much of the `buildForm()` code to `GenericContactType::buildForm()`
-  as you can
+  as you can -> done
   
 Hints
 -----

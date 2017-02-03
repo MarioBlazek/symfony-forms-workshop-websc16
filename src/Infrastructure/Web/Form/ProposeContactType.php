@@ -7,10 +7,7 @@ use Contacts\Domain\Contact\Contact;
 use Contacts\Domain\Contact\ContactId;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\DataMapperInterface;
-use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -18,45 +15,6 @@ class ProposeContactType extends AbstractType implements DataMapperInterface
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('firstName', TextType::class, [
-            'required' => true,
-            'constraints' => new Assert\NotNull(),
-        ]);
-
-        $builder->add('lastName', TextType::class, [
-            'required' => true,
-            'constraints' => new Assert\NotNull(),
-        ]);
-
-        $builder->add('dateOfBirth', BirthdayType::class, [
-            'required' => false,
-            'widget' => 'single_text',
-            'format' => 'd/M/y',
-            'attr' => [
-                'class' => 'bootstrap-datepicker',
-            ],
-        ]);
-
-        $builder->add('email', EmailType::class, [
-            'required' => false,
-        ]);
-
-        $builder->add('address', AddressType::class, [
-            'required' => false,
-        ]);
-
-        $builder->add('phoneNumber', PhoneNumberType::class, [
-            'required' => false,
-        ]);
-
-        $builder->add('notes', TextareaType::class, [
-            'required' => false,
-        ]);
-
-        $builder->add('organizationId', OrganizationIdType::class, [
-            'required' => false,
-        ]);
-
         $builder->add('submit', SubmitType::class, [
             'label' => 'Propose',
         ]);
@@ -92,5 +50,13 @@ class ProposeContactType extends AbstractType implements DataMapperInterface
                 Contact::FIELD_ORGANIZATION_ID => $forms['organizationId']->getData(),
             ]
         );
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getParent()
+    {
+        return GenericContactType::class;
     }
 }
