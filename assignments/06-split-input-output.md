@@ -16,15 +16,15 @@ Tasks
 
 * Implement the `Contacts\Infrastructure\Web\Form\ModifyContactType`. You can
   copy large parts of the `ProposeContactType`. We'll learn how to reuse the
-  code in the assignment 8
+  code in the assignment 8 -> done
 * In `mapDataToForms()`, expect that `$data` is a `Contact` instance and map
-  the values of that contact to the fields
+  the values of that contact to the fields -> done
 * Show the form in `ContactController::modifyAction()`. Pass the `Contact` to
-  `$this->createForm()` to display its values in the form
+  `$this->createForm()` to display its values in the form -> done
 * If the form is submitted successfully, dispatch the `ModifyContact` command 
-  created by the form and redirect to the contact list
+  created by the form and redirect to the contact list -> done
 * Use `form(form)` to render the form. We'll learn how to reuse the HTML of
-  the proposal form in assignment 9
+  the proposal form in assignment 9 -> done
   
 Solution
 --------
