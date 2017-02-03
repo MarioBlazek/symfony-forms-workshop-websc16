@@ -10,13 +10,13 @@ We'll fix that in this assignment.
 Tasks
 -----
 
-* Create the class `Contacts\Infrastructure\Web\Form\OrganizationIdType`
-* Let the class inherit `EntityType` (use the `getParent()` method)
-* Set the `class` option to `Organization::class`
+* Create the class `Contacts\Infrastructure\Web\Form\OrganizationIdType` -> done
+* Let the class inherit `EntityType` (use the `getParent()` method) -> done
+* Set the `class` option to `Organization::class` -> done
 * Add the field `organizationId` of the new type to `ProposeContactType` and
-  `ModifyContactType`
+  `ModifyContactType` -> done
 * The field returns an `Organization`, but we need the `OrganizationId`: Add
-  a data transformer that transforms between the two
+  a data transformer that transforms between the two -> done
   
 Example
 -------

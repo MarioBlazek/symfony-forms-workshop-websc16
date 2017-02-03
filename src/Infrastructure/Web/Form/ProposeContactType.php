@@ -53,6 +53,10 @@ class ProposeContactType extends AbstractType implements DataMapperInterface
             'required' => false,
         ]);
 
+        $builder->add('organizationId', OrganizationIdType::class, [
+            'required' => false,
+        ]);
+
         $builder->add('submit', SubmitType::class, [
             'label' => 'Propose',
         ]);
@@ -85,6 +89,7 @@ class ProposeContactType extends AbstractType implements DataMapperInterface
                 Contact::FIELD_ADDRESS => $forms['address']->getData(),
                 Contact::FIELD_PHONE_NUMBER => $forms['phoneNumber']->getData(),
                 Contact::FIELD_NOTES => $forms['notes']->getData(),
+                Contact::FIELD_ORGANIZATION_ID => $forms['organizationId']->getData(),
             ]
         );
     }

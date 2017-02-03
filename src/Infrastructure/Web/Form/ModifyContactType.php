@@ -55,6 +55,10 @@ class ModifyContactType extends AbstractType implements DataMapperInterface
             'required' => false,
         ]);
 
+        $builder->add('organizationId', OrganizationIdType::class, [
+            'required' => false,
+        ]);
+
         $builder->add('submit', SubmitType::class, [
             'label' => 'Propose',
         ]);
@@ -80,6 +84,7 @@ class ModifyContactType extends AbstractType implements DataMapperInterface
         $forms['email']->setData($data->getEmail());
         $forms['phoneNumber']->setData($data->getPhoneNumber());
         $forms['notes']->setData($data->getNotes());
+        $forms['organizationId']->setData($data->getOrganizationId());
     }
 
     /**
@@ -103,6 +108,7 @@ class ModifyContactType extends AbstractType implements DataMapperInterface
                 Contact::FIELD_ADDRESS => $forms['address']->getData(),
                 Contact::FIELD_PHONE_NUMBER => $forms['phoneNumber']->getData(),
                 Contact::FIELD_NOTES => $forms['notes']->getData(),
+                Contact::FIELD_ORGANIZATION_ID => $forms['organizationId']->getData(),
             ]
         );
     }
